@@ -104,12 +104,17 @@ final class BDLV_Buoni_Plugin
 
         $code = isset($_POST['bdlv_code']) ? sanitize_text_field(wp_unslash($_POST['bdlv_code'])) : '';
         $recipient = isset($_POST['bdlv_recipient']) ? sanitize_text_field(wp_unslash($_POST['bdlv_recipient'])) : '';
-        $value = isset($_POST['bdlv_value']) ? (float) wp_unslash($_POST['bdlv_value']) : 0.0;
+        $value_raw = isset($_POST['bdlv_value']) ? wp_unslash($_POST['bdlv_value']) : '0';
+        $value = is_numeric($value_raw) ? (float) $value_raw : 0.0;
+
+        if ($value < 0) {
+            $value = 0.0;
+        }
         $redeemed = isset($_POST['bdlv_redeemed']) ? '1' : '0';
 
         update_post_meta($post_id, '_bdlv_code', $code);
         update_post_meta($post_id, '_bdlv_recipient', $recipient);
-        update_post_meta($post_id, '_bdlv_value', number_format($value, 2, '.', ''));
+        update_post_meta($post_id, '_bdlv_value', (string) round($value, 2));
         update_post_meta($post_id, '_bdlv_redeemed', $redeemed);
     }
 
@@ -119,8 +124,18 @@ final class BDLV_Buoni_Plugin
             'post_type' => self::POST_TYPE,
             'post_status' => 'publish',
             'posts_per_page' => -1,
-            'meta_key' => '_bdlv_redeemed',
-            'meta_value' => '0',
+            'meta_query' => [
+                'relation' => 'OR',
+                [
+                    'key' => '_bdlv_redeemed',
+                    'value' => '0',
+                    'compare' => '=',
+                ],
+                [
+                    'key' => '_bdlv_redeemed',
+                    'compare' => 'NOT EXISTS',
+                ],
+            ],
         ]);
 
         if (! $query->have_posts()) {
@@ -134,7 +149,7 @@ final class BDLV_Buoni_Plugin
             $query->the_post();
             $post_id = get_the_ID();
             $code = (string) get_post_meta($post_id, '_bdlv_code', true);
-            $value = (string) get_post_meta($post_id, '_bdlv_value', true);
+            $value = (float) get_post_meta($post_id, '_bdlv_value', true);
             $recipient = (string) get_post_meta($post_id, '_bdlv_recipient', true);
 
             echo '<li>';
@@ -144,8 +159,8 @@ final class BDLV_Buoni_Plugin
                 echo ' - ' . esc_html__('Codice:', 'buoni-plugin') . ' ' . esc_html($code);
             }
 
-            if ($value !== '') {
-                echo ' - ' . esc_html__('Valore:', 'buoni-plugin') . ' €' . esc_html($value);
+            if ($value > 0) {
+                echo ' - ' . esc_html__('Valore:', 'buoni-plugin') . ' €' . esc_html(number_format($value, 2, '.', ''));
             }
 
             if ($recipient !== '') {
