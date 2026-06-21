@@ -165,7 +165,11 @@ final class BDLV_Buoni_Plugin
 
             if ($value > 0) {
                 $formatted_value = number_format_i18n($value, 2);
-                echo ' - ' . esc_html(sprintf(__('Valore: %s €', 'buoni-plugin'), $formatted_value));
+                echo ' - ' . sprintf(
+                    esc_html__('Valore: %1$s %2$s', 'buoni-plugin'),
+                    esc_html($formatted_value),
+                    esc_html__('€', 'buoni-plugin')
+                );
             }
 
             if ($recipient !== '') {
@@ -182,4 +186,15 @@ final class BDLV_Buoni_Plugin
     }
 }
 
-new BDLV_Buoni_Plugin();
+function bdlv_buoni_plugin(): BDLV_Buoni_Plugin
+{
+    static $instance = null;
+
+    if ($instance === null) {
+        $instance = new BDLV_Buoni_Plugin();
+    }
+
+    return $instance;
+}
+
+bdlv_buoni_plugin();
