@@ -14,6 +14,7 @@ if (! defined('ABSPATH')) {
 final class BDLV_Buoni_Plugin
 {
     private const POST_TYPE = 'bdlv_buono';
+    private const DEFAULT_SHORTCODE_LIMIT = 50;
 
     public function __construct()
     {
@@ -121,7 +122,7 @@ final class BDLV_Buoni_Plugin
 
     public function render_shortcode(array $atts = []): string
     {
-        $atts = shortcode_atts(['limit' => 50], $atts, 'bdlv_buoni');
+        $atts = shortcode_atts(['limit' => self::DEFAULT_SHORTCODE_LIMIT], $atts, 'bdlv_buoni');
         $limit = max(1, (int) $atts['limit']);
 
         $query = new \WP_Query([
