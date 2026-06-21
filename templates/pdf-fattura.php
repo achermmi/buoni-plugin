@@ -70,7 +70,7 @@ body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #111; 
 .qrb-img { width: 174px; height: 174px; display: block; }
 .qrb-img-fallback { width: 174px; height: 174px; border: 1px solid #bbb; }
 .qrb-img-fallback td { text-align: center; vertical-align: middle; font-size: 7pt; color: #888; }
-@page { size: A4 portrait; margin: 14mm 16mm 12mm 16mm; }
+@page { margin: 14mm 16mm 12mm 16mm; }
 </style>
 </head>
 <body>

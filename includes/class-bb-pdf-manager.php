@@ -71,7 +71,7 @@ class BB_PDF_Manager {
         }
 
         $html     = self::build_html( $tipo, $ordine, $buono );
-        $pdf_data = self::html_to_pdf( $html );
+        $pdf_data = self::html_to_pdf( $html, $tipo );
 
         $dirs  = self::upload_dir();
         $nome  = self::nome_file( $tipo, $ordine, $buono );
@@ -112,7 +112,7 @@ class BB_PDF_Manager {
     }
 
     // ── HTML → PDF ────────────────────────────────────────────────────────────
-    public static function html_to_pdf( string $html ): ?string {
+    public static function html_to_pdf( string $html, string $tipo = 'fattura' ): ?string {
         if ( ! self::load_vendor() ) return null;
 
         $html = ltrim( $html, "\xEF\xBB\xBF" );
@@ -127,13 +127,27 @@ class BB_PDF_Manager {
             if ( ! is_writable( $tmp ) ) $tmp = sys_get_temp_dir();
             try {
                 $prev = error_reporting( E_ERROR | E_PARSE );
-                $mpdf = new \Mpdf\Mpdf([
-                    'format'      => 'A4',
-                    'orientation' => 'P',
-                    'margin_top'  => 0, 'margin_bottom' => 0,
-                    'margin_left' => 0, 'margin_right'  => 0,
-                    'tempDir'     => $tmp,
-                ]);
+                // I margini vanno impostati nel costruttore: mPDF interpreta
+                // "@page { size: A4 portrait }" come due token di taglia (A4→0,
+                // portrait→0), generando outer_width_TB=148mm che si somma ai
+                // margini e produce PageBreakTrigger < tMargin → 1000+ pagine vuote.
+                if ( $tipo === 'buono' ) {
+                    $mpdf_config = [
+                        'format'        => 'A5-L',
+                        'margin_top'    => 0, 'margin_bottom' => 0,
+                        'margin_left'   => 0, 'margin_right'  => 0,
+                        'tempDir'       => $tmp,
+                    ];
+                } else {
+                    $mpdf_config = [
+                        'format'        => 'A4',
+                        'orientation'   => 'P',
+                        'margin_top'    => 14, 'margin_bottom' => 12,
+                        'margin_left'   => 16, 'margin_right'  => 16,
+                        'tempDir'       => $tmp,
+                    ];
+                }
+                $mpdf = new \Mpdf\Mpdf( $mpdf_config );
                 $mpdf->WriteHTML( $html );
                 $pdf = $mpdf->Output( '', 'S' );
                 error_reporting( $prev );
@@ -183,7 +197,7 @@ class BB_PDF_Manager {
             if ( $ordine ) {
                 $buono = $pdf->buono_id ? BB_Database::get_buono( (int) $pdf->buono_id ) : null;
                 $html  = self::build_html( $pdf->tipo, $ordine, $buono );
-                $data  = self::html_to_pdf( $html ) ?? $html;
+                $data  = self::html_to_pdf( $html, $pdf->tipo ) ?? $html;
                 file_put_contents( $pdf->percorso, $data );
             } else {
                 wp_die( __( 'File non trovato.', 'botega-buoni' ) );

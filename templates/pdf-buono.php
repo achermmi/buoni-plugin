@@ -18,7 +18,7 @@ $dc_fmt   = $buono->data_consegna
 <meta charset="UTF-8">
 <title>Buono Regalo</title>
 <style>
-@page { size: A5 landscape; margin: 0; }
+@page { margin: 0; }
 * { box-sizing: border-box; }
 body { margin:0; padding:0; font-family: Arial, Helvetica, sans-serif; background: #fff; }
 
