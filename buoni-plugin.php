@@ -63,7 +63,8 @@ final class BDLV_Buoni_Plugin
         wp_nonce_field('bdlv_save_buono', 'bdlv_buono_nonce');
 
         $code = (string) get_post_meta($post->ID, '_bdlv_code', true);
-        $value = (string) get_post_meta($post->ID, '_bdlv_value', true);
+        $value_meta = get_post_meta($post->ID, '_bdlv_value', true);
+        $value = is_numeric($value_meta) ? (float) $value_meta : 0.0;
         $recipient = (string) get_post_meta($post->ID, '_bdlv_recipient', true);
         $redeemed = (string) get_post_meta($post->ID, '_bdlv_redeemed', true);
         ?>
@@ -73,7 +74,7 @@ final class BDLV_Buoni_Plugin
         </p>
         <p>
             <label for="bdlv_value"><strong><?php esc_html_e('Valore (€)', 'buoni-plugin'); ?></strong></label><br>
-            <input type="number" id="bdlv_value" name="bdlv_value" value="<?php echo esc_attr($value); ?>" class="small-text" min="0" step="0.01" />
+            <input type="number" id="bdlv_value" name="bdlv_value" value="<?php echo esc_attr((string) $value); ?>" class="small-text" min="0" step="0.01" />
         </p>
         <p>
             <label for="bdlv_recipient"><strong><?php esc_html_e('Destinatario', 'buoni-plugin'); ?></strong></label><br>
@@ -163,7 +164,8 @@ final class BDLV_Buoni_Plugin
             }
 
             if ($value > 0) {
-                echo ' - ' . esc_html__('Valore:', 'buoni-plugin') . ' €' . esc_html(number_format_i18n($value, 2));
+                $formatted_value = number_format_i18n($value, 2);
+                echo ' - ' . esc_html(sprintf(__('Valore: %s €', 'buoni-plugin'), $formatted_value));
             }
 
             if ($recipient !== '') {
