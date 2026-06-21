@@ -1,0 +1,689 @@
+# Botega Buoni Regalo – Italiano (it_IT)
+# Copyright (C) 2024 La Botega da la Lavizzara
+# Text Domain: botega-buoni
+msgid ""
+msgstr ""
+"Project-Id-Version: Botega Buoni Regalo 1.0.0\n"
+"POT-Creation-Date: 2024-01-01\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it_IT\n"
+"X-Text-Domain: botega-buoni\n"
+
+# Per aggiungere traduzioni in altre lingue:
+# 1. Copia questo file come botega-buoni-fr_FR.po (per francese)
+# 2. Traduci le stringhe msgstr
+# 3. Compila in .mo con: msgfmt botega-buoni-fr_FR.po -o botega-buoni-fr_FR.mo
+# 4. Carica entrambi i file nella cartella /languages/
+
+# ── Menu e navigazione ────────────────────────────────────────────────────────
+
+msgid "Buoni Regalo"
+msgstr ""
+
+msgid "Tutti gli ordini"
+msgstr ""
+
+msgid "Impostazioni"
+msgstr ""
+
+msgid "Ruoli e accessi"
+msgstr ""
+
+msgid "👥 Ruoli e accessi"
+msgstr ""
+
+msgid "Ordini"
+msgstr ""
+
+msgid "Tutti"
+msgstr ""
+
+msgid "Cerca"
+msgstr ""
+
+# ── Ruoli ─────────────────────────────────────────────────────────────────────
+
+msgid "Segretariato – Buoni Regalo"
+msgstr ""
+
+msgid "Comitato – Buoni Regalo"
+msgstr ""
+
+msgid "Cassiere – Buoni Regalo"
+msgstr ""
+
+# ── Messaggi admin ────────────────────────────────────────────────────────────
+
+msgid "Ordine contrassegnato come pagato. Email e buoni inviati."
+msgstr ""
+
+msgid "Stato aggiornato."
+msgstr ""
+
+msgid "Impostazioni salvate."
+msgstr ""
+
+msgid "Ordine non trovato."
+msgstr ""
+
+msgid "Operazione completata."
+msgstr ""
+
+msgid "Si è verificato un errore."
+msgstr ""
+
+# ── Conferme AJAX ─────────────────────────────────────────────────────────────
+
+msgid "Eliminare definitivamente questo ordine e tutti i buoni associati?"
+msgstr ""
+
+msgid "Inviare i buoni a tutti i destinatari?"
+msgstr ""
+
+msgid "Inviare il richiamo di pagamento all'acquirente?"
+msgstr ""
+
+msgid "Contrassegnare come pagato? Verranno inviati i buoni ai destinatari."
+msgstr ""
+
+msgid "Annullare questo ordine?"
+msgstr ""
+
+msgid "Eliminare definitivamente questo ordine?"
+msgstr ""
+
+msgid "Elaborazione in corso…"
+msgstr ""
+
+msgid "Elaborazione…"
+msgstr ""
+
+# ── Lista ordini (admin) ──────────────────────────────────────────────────────
+
+msgid "Buoni Regalo – Ordini"
+msgstr ""
+
+msgid "Pagina pubblica"
+msgstr ""
+
+msgid "Rif. Ordine"
+msgstr ""
+
+msgid "Acquirente"
+msgstr ""
+
+msgid "Importo"
+msgstr ""
+
+msgid "Q.tà"
+msgstr ""
+
+msgid "Metodo"
+msgstr ""
+
+msgid "Stato"
+msgstr ""
+
+msgid "Data"
+msgstr ""
+
+msgid "Azioni"
+msgstr ""
+
+msgid "Ordine ref"
+msgstr ""
+
+msgid "Importo totale"
+msgstr ""
+
+msgid "Data creazione"
+msgstr ""
+
+msgid "Dettaglio"
+msgstr ""
+
+msgid "✓ Pagato"
+msgstr ""
+
+msgid "🗑"
+msgstr ""
+
+msgid "Nessun ordine trovato."
+msgstr ""
+
+# ── Dettaglio ordine ──────────────────────────────────────────────────────────
+
+msgid "Ordine %s"
+msgstr ""
+
+msgid "Nome"
+msgstr ""
+
+msgid "Indirizzo"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "Telefono"
+msgstr ""
+
+msgid "Buoni inclusi"
+msgstr ""
+
+msgid "Codice"
+msgstr ""
+
+msgid "Destinatario"
+msgstr ""
+
+msgid "Consegna"
+msgstr ""
+
+msgid "Riepilogo ordine"
+msgstr ""
+
+msgid "Riepilogo"
+msgstr ""
+
+msgid "Rif."
+msgstr ""
+
+msgid "Rif. ordine"
+msgstr ""
+
+msgid "Importo per buono"
+msgstr ""
+
+msgid "Quantità"
+msgstr ""
+
+msgid "Totale"
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
+
+msgid "Reminder inviati"
+msgstr ""
+
+msgid "PDF"
+msgstr ""
+
+msgid "Documenti"
+msgstr ""
+
+msgid "Documenti PDF"
+msgstr ""
+
+msgid "Nessun buono trovato."
+msgstr ""
+
+msgid "Nessun buono."
+msgstr ""
+
+msgid "Pagato"
+msgstr ""
+
+# ── Azioni ordine ─────────────────────────────────────────────────────────────
+
+msgid "Segna come Pagato + invia buoni"
+msgstr ""
+
+msgid "Segna come Pagato e invia buoni"
+msgstr ""
+
+msgid "Invia buoni ai destinatari"
+msgstr ""
+
+msgid "Invia richiamo pagamento"
+msgstr ""
+
+msgid "Rigenera fattura PDF"
+msgstr ""
+
+msgid "Annulla ordine"
+msgstr ""
+
+msgid "Elimina ordine"
+msgstr ""
+
+# ── Validazione form frontend ─────────────────────────────────────────────────
+
+msgid "Inserire un indirizzo e-mail valido."
+msgstr ""
+
+msgid "Campo obbligatorio."
+msgstr ""
+
+msgid "La quantità minima è 1."
+msgstr ""
+
+msgid "La quantità massima è 10."
+msgstr ""
+
+msgid "Sessione scaduta. Ricaricare la pagina e riprovare."
+msgstr ""
+
+msgid "Il nome è obbligatorio."
+msgstr ""
+
+msgid "Il cognome è obbligatorio."
+msgstr ""
+
+msgid "L'indirizzo è obbligatorio."
+msgstr ""
+
+msgid "Il CAP è obbligatorio."
+msgstr ""
+
+msgid "La località è obbligatoria."
+msgstr ""
+
+msgid "L'e-mail è obbligatoria."
+msgstr ""
+
+msgid "E-mail non valida."
+msgstr ""
+
+msgid "Il telefono è obbligatorio."
+msgstr ""
+
+msgid "Metodo di pagamento non valido."
+msgstr ""
+
+msgid "Errore durante il salvataggio. Riprovare."
+msgstr ""
+
+# ── Accesso frontend ──────────────────────────────────────────────────────────
+
+msgid "<a href=\"%s\">Accedi</a> per gestire i buoni regalo."
+msgstr ""
+
+msgid "Non hai i permessi per accedere a questa sezione."
+msgstr ""
+
+# ── Email ─────────────────────────────────────────────────────────────────────
+
+msgid "Ordine buono regalo %s – La Botega da la Lavizzara"
+msgstr ""
+
+msgid "Conferma pagamento ordine %s – La Botega da la Lavizzara"
+msgstr ""
+
+msgid "Hai ricevuto un buono regalo da La Botega da la Lavizzara! 🎁"
+msgstr ""
+
+msgid "[Reminder] Pagamento in attesa ordine %s – La Botega"
+msgstr ""
+
+msgid ""
+"L'ordine %s del %s di %s (%s) per %s (metodo: Fattura) risulta ancora non pagato.\n"
+"\n"
+"Buoni: %d x CHF %.2f = %s\n"
+"\n"
+"Gestisci l'ordine nel pannello amministrativo:\n"
+"%s"
+msgstr ""
+
+msgid "Promemoria pagamento ordine %s – La Botega da la Lavizzara"
+msgstr ""
+
+# ── Pagamento ─────────────────────────────────────────────────────────────────
+
+msgid "Stripe non configurato. Contattare l'amministratore."
+msgstr ""
+
+msgid "Ordine %s – %d buono/i da %s"
+msgstr ""
+
+msgid "Errore di connessione a Stripe. Riprovare."
+msgstr ""
+
+msgid "Impossibile avviare il pagamento Stripe. Riprovare."
+msgstr ""
+
+msgid "PayPal non configurato. Contattare l'amministratore."
+msgstr ""
+
+msgid "Errore di autenticazione PayPal. Riprovare."
+msgstr ""
+
+msgid "Errore di connessione a PayPal. Riprovare."
+msgstr ""
+
+msgid "Impossibile avviare il pagamento PayPal. Riprovare."
+msgstr ""
+
+msgid "Buono regalo La Botega x%d"
+msgstr ""
+
+msgid "Buono regalo La Botega x%d – %s"
+msgid_plural "Buoni regalo La Botega x%d – %s"
+msgstr[0] ""
+msgstr[1] ""
+
+# ── Form pubblico acquisto ────────────────────────────────────────────────────
+
+msgid "Carta regalo"
+msgstr ""
+
+msgid "Ordine ricevuto!"
+msgstr ""
+
+msgid "Grazie! La tua fattura per l'ordine %s è stata inviata alla tua email."
+msgstr ""
+
+msgid "Trovi la fattura con le istruzioni per il pagamento nell'email che ti abbiamo inviato."
+msgstr ""
+
+msgid "I buoni regalo saranno inviati ai destinatari dopo la ricezione del pagamento."
+msgstr ""
+
+msgid "Il pagamento per l'ordine %s è stato confermato."
+msgstr ""
+
+msgid "Hai ricevuto una conferma via email e i buoni sono stati inviati ai destinatari."
+msgstr ""
+
+msgid "Acquista un altro buono"
+msgstr ""
+
+msgid "Pagamento annullato."
+msgstr ""
+
+msgid "Il pagamento è stato annullato. Puoi riprovare quando vuoi."
+msgstr ""
+
+msgid "Non puoi sbagliare con una carta regalo."
+msgstr ""
+
+msgid "Scegli un importo e scrivi un messaggio personalizzato per rendere tuo questo regalo."
+msgstr ""
+
+msgid "I tuoi dati"
+msgstr ""
+
+msgid "Nome"
+msgstr ""
+
+msgid "Cognome"
+msgstr ""
+
+msgid "Via / Strada…"
+msgstr ""
+
+msgid "CAP"
+msgstr ""
+
+msgid "Località"
+msgstr ""
+
+msgid "Comune / Città"
+msgstr ""
+
+msgid "email@esempio.ch"
+msgstr ""
+
+msgid "+41 …"
+msgstr ""
+
+msgid "Scegli importo"
+msgstr ""
+
+msgid "Diminuisci quantità"
+msgstr ""
+
+msgid "Aumenta quantità"
+msgstr ""
+
+msgid "Per chi è il buono regalo?"
+msgstr ""
+
+msgid "Per qualcun altro"
+msgstr ""
+
+msgid "Per me"
+msgstr ""
+
+msgid "Email del destinatario"
+msgstr ""
+
+msgid "Nome del destinatario"
+msgstr ""
+
+msgid "Nome e cognome"
+msgstr ""
+
+msgid "Data di consegna"
+msgstr ""
+
+msgid "Orario della consegna"
+msgstr ""
+
+msgid "Ora"
+msgstr ""
+
+msgid "Il buono regalo non scade mai."
+msgstr ""
+
+msgid "Messaggio"
+msgstr ""
+
+msgid "Scrivi un messaggio personalizzato…"
+msgstr ""
+
+msgid "Dettagli consegna"
+msgstr ""
+
+msgid "Email destinatario"
+msgstr ""
+
+msgid "Verrà pre-compilato con la tua email"
+msgstr ""
+
+msgid "Tuo nome e cognome"
+msgstr ""
+
+msgid "Messaggio uguale per tutti i buoni"
+msgstr ""
+
+msgid "Messaggio comune"
+msgstr ""
+
+msgid "Messaggio per tutti i buoni…"
+msgstr ""
+
+msgid "Metodo di pagamento"
+msgstr ""
+
+msgid "Fattura"
+msgstr ""
+
+msgid "Carta / Twint"
+msgstr ""
+
+msgid "PayPal"
+msgstr ""
+
+msgid "Totale:"
+msgstr ""
+
+msgid "Acquista ora"
+msgstr ""
+
+# ── Frontend admin lista ──────────────────────────────────────────────────────
+
+msgid "Cerca per nome, email, riferimento…"
+msgstr ""
+
+msgid "%d di %d ordini"
+msgstr ""
+
+msgid "Nessun ordine corrisponde ai criteri di ricerca."
+msgstr ""
+
+msgid "Mostra tutti"
+msgstr ""
+
+msgid "Nessun ordine ancora presente."
+msgstr ""
+
+# ── Impostazioni ──────────────────────────────────────────────────────────────
+
+msgid "Impostazioni – Botega Buoni Regalo"
+msgstr ""
+
+msgid "La pagina dei buoni regalo è accessibile a:"
+msgstr ""
+
+msgid "Shortcode:"
+msgstr ""
+
+msgid "Metodi di pagamento abilitati"
+msgstr ""
+
+msgid "Abilita i metodi di pagamento che vuoi offrire ai clienti."
+msgstr ""
+
+msgid "Stripe – Carte di credito / Twint"
+msgstr ""
+
+msgid "Stripe gestisce carte di credito/debito e Twint. Richiede un account Stripe (stripe.com)."
+msgstr ""
+
+msgid "Chiave pubblica (pk_live_ o pk_test_)"
+msgstr ""
+
+msgid "Chiave segreta (sk_live_ o sk_test_)"
+msgstr ""
+
+msgid "Webhook signing secret (whsec_…)"
+msgstr ""
+
+msgid "URL webhook da configurare in Stripe:"
+msgstr ""
+
+msgid "Evento: checkout.session.completed"
+msgstr ""
+
+msgid "Abilitare Twint via Stripe (richiede che Twint sia attivo nel tuo account Stripe)"
+msgstr ""
+
+msgid "Richiede un account PayPal Business. Crea un'app su developer.paypal.com per ottenere le credenziali."
+msgstr ""
+
+msgid "Client ID"
+msgstr ""
+
+msgid "Secret (lascia vuoto per non modificare)"
+msgstr ""
+
+msgid "Modalità Sandbox (test)"
+msgstr ""
+
+msgid "URL webhook da configurare in PayPal:"
+msgstr ""
+
+msgid "Mittente email"
+msgstr ""
+
+msgid "Nome mittente"
+msgstr ""
+
+msgid "Email mittente"
+msgstr ""
+
+msgid "Email amministratore (per reminder)"
+msgstr ""
+
+msgid "Template email"
+msgstr ""
+
+msgid "Variabili disponibili: {{nome}}, {{ref}}, {{importo}}, {{totale}}, {{quantita}}, {{metodo}}, {{data}}, {{iban}}"
+msgstr ""
+
+msgid "Per email buono: anche {{dest_nome}}, {{codice}}, {{messaggio}}, {{data_consegna}}"
+msgstr ""
+
+msgid "Email fattura (acquirente)"
+msgstr ""
+
+msgid "Email conferma pagamento (acquirente)"
+msgstr ""
+
+msgid "Email buono regalo (destinatario)"
+msgstr ""
+
+msgid "Email richiamo pagamento (acquirente)"
+msgstr ""
+
+msgid "Configurazione SMTP"
+msgstr ""
+
+msgid "Usa SMTP per inviare le email"
+msgstr ""
+
+msgid "Host SMTP"
+msgstr ""
+
+msgid "Porta"
+msgstr ""
+
+msgid "Utente SMTP"
+msgstr ""
+
+msgid "Password SMTP (lascia vuoto per non modificare)"
+msgstr ""
+
+msgid "Autocomplete indirizzo"
+msgstr ""
+
+msgid "Il form usa OpenStreetMap (Nominatim) gratuitamente. Per usare Google Places inserire una chiave API."
+msgstr ""
+
+msgid "Chiave API Google Maps (facoltativa)"
+msgstr ""
+
+msgid "Salva impostazioni"
+msgstr ""
+
+# ── Ruoli e accessi ───────────────────────────────────────────────────────────
+
+msgid "Ruoli e accessi – Botega Buoni"
+msgstr ""
+
+msgid "Gli utenti con uno dei ruoli seguenti possono accedere al pannello di gestione dei buoni regalo dal frontend (shortcode [bb_admin_buoni]) e dalla dashboard WordPress, senza avere accesso alle altre impostazioni del sito."
+msgstr ""
+
+msgid "Utente"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Azione"
+msgstr ""
+
+msgid "Rimuovere %s dal ruolo %s?"
+msgstr ""
+
+msgid "Rimuovi"
+msgstr ""
+
+msgid "Nessun utente con questo ruolo."
+msgstr ""
+
+msgid "— Seleziona utente —"
+msgstr ""
+
+msgid "Aggiungi a %s"
+msgstr ""
+
+msgid "Accesso dal frontend"
+msgstr ""
+
+msgid "Il pannello di gestione è disponibile anche dal frontend tramite lo shortcode:"
+msgstr ""
