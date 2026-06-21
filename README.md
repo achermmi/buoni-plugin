@@ -1,2 +1,15 @@
 # buoni-plugin
-Plugin gestione buoni Botega da la Lavizzara
+
+Plugin WordPress per la gestione buoni di **Botega da la Lavizzara**.
+
+## Funzionalità
+
+- Nuovo tipo contenuto **Buoni** nel pannello amministrativo.
+- Campi dedicati: codice, valore, destinatario e stato riscattato.
+- Shortcode `[bdlv_buoni]` per mostrare i buoni disponibili (non riscattati).
+
+## Installazione
+
+1. Copia la cartella del progetto in `wp-content/plugins/buoni-plugin`.
+2. Attiva il plugin da **Plugin** in WordPress.
+3. Gestisci i buoni dal menu **Buoni**.
