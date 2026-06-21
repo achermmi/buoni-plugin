@@ -123,7 +123,7 @@ final class BDLV_Buoni_Plugin
     public function render_shortcode(array $atts = []): string
     {
         $atts = shortcode_atts(['limit' => self::DEFAULT_SHORTCODE_LIMIT], $atts, 'bdlv_buoni');
-        $limit = max(1, (int) $atts['limit']);
+        $limit = max(1, min((int) $atts['limit'], 100));
 
         $query = new \WP_Query([
             'post_type' => self::POST_TYPE,
@@ -169,7 +169,7 @@ final class BDLV_Buoni_Plugin
                 echo ' - ' . sprintf(
                     esc_html__('Valore: %1$s %2$s', 'buoni-plugin'),
                     esc_html($formatted_value),
-                    '€'
+                    esc_html('€')
                 );
             }
 
