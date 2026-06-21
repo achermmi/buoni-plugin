@@ -106,7 +106,7 @@ final class BDLV_Buoni_Plugin
 
         $code = isset($_POST['bdlv_code']) ? sanitize_text_field(wp_unslash($_POST['bdlv_code'])) : '';
         $recipient = isset($_POST['bdlv_recipient']) ? sanitize_text_field(wp_unslash($_POST['bdlv_recipient'])) : '';
-        $value_raw = isset($_POST['bdlv_value']) ? wp_unslash($_POST['bdlv_value']) : '0';
+        $value_raw = isset($_POST['bdlv_value']) ? sanitize_text_field(wp_unslash($_POST['bdlv_value'])) : '0';
         $value = is_numeric($value_raw) ? (float) $value_raw : 0.0;
 
         if ($value < 0) {
@@ -169,7 +169,7 @@ final class BDLV_Buoni_Plugin
                 echo ' - ' . sprintf(
                     esc_html__('Valore: %1$s %2$s', 'buoni-plugin'),
                     esc_html($formatted_value),
-                    esc_html__('€', 'buoni-plugin')
+                    '€'
                 );
             }
 
