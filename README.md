@@ -7,6 +7,7 @@ Plugin WordPress per la gestione buoni di **Botega da la Lavizzara**.
 - Nuovo tipo contenuto **Buoni** nel pannello amministrativo.
 - Campi dedicati: codice, valore, destinatario e stato riscattato.
 - Shortcode `[bdlv_buoni]` per mostrare i buoni disponibili (non riscattati).
+  - Opzionale: `limit` (es. `[bdlv_buoni limit=20]`).
 
 ## Installazione
 

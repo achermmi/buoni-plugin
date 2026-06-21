@@ -118,12 +118,15 @@ final class BDLV_Buoni_Plugin
         update_post_meta($post_id, '_bdlv_redeemed', $redeemed);
     }
 
-    public function render_shortcode(): string
+    public function render_shortcode(array $atts = []): string
     {
+        $atts = shortcode_atts(['limit' => 50], $atts, 'bdlv_buoni');
+        $limit = max(1, (int) $atts['limit']);
+
         $query = new \WP_Query([
             'post_type' => self::POST_TYPE,
             'post_status' => 'publish',
-            'posts_per_page' => -1,
+            'posts_per_page' => $limit,
             'meta_query' => [
                 'relation' => 'OR',
                 [
@@ -160,7 +163,7 @@ final class BDLV_Buoni_Plugin
             }
 
             if ($value > 0) {
-                echo ' - ' . esc_html__('Valore:', 'buoni-plugin') . ' €' . esc_html(number_format($value, 2, '.', ''));
+                echo ' - ' . esc_html__('Valore:', 'buoni-plugin') . ' €' . esc_html(number_format_i18n($value, 2));
             }
 
             if ($recipient !== '') {
