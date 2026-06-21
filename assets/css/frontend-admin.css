@@ -1,0 +1,255 @@
+/* =============================================================
+   Botega Buoni – CSS Frontend Admin
+   Pannello di gestione per ruoli Segretariato / Comitato / Cassiere
+   ============================================================= */
+
+:root {
+  --bb-verde:  #2c3a00;
+  --bb-giallo: #d4e000;
+  --bb-ocra:   #C8960A;
+  --bb-avorio: #F8F0E0;
+  --bb-border: #dee2e6;
+  --bb-errore: #dc3545;
+  --bb-ok:     #28a745;
+  --bb-info:   #007bff;
+  --bb-radius: 8px;
+  --bb-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+/* ── Wrap ──────────────────────────────────────────────────── */
+.bb-fa-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: inherit;
+  padding-bottom: 40px;
+}
+
+/* ── Messaggi ──────────────────────────────────────────────── */
+.bb-fa-warn {
+  background: #fff3cd; border: 1px solid #ffc107; color: #856404;
+  border-radius: var(--bb-radius); padding: 12px 16px; font-size: 14px;
+}
+.bb-fa-msg {
+  border-radius: var(--bb-radius); padding: 12px 16px;
+  margin-bottom: 16px; font-size: 14px; font-weight: 600;
+}
+.bb-fa-msg.success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+.bb-fa-msg.error   { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+
+/* ── Header ────────────────────────────────────────────────── */
+.bb-fa-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px; flex-wrap: wrap;
+}
+.bb-fa-title {
+  font-size: 22px; font-weight: 700; color: var(--bb-verde);
+  margin: 0; flex: 1;
+}
+.bb-fa-role-badge {
+  background: var(--bb-verde); color: var(--bb-giallo);
+  font-size: 12px; font-weight: 700; padding: 4px 12px;
+  border-radius: 20px; letter-spacing: 0.5px;
+}
+.bb-fa-back-btn { flex-shrink: 0; }
+
+/* ── Tabs ──────────────────────────────────────────────────── */
+.bb-fa-tabs {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  border-bottom: 2px solid var(--bb-border);
+  margin-bottom: 16px;
+}
+.bb-fa-tab {
+  padding: 8px 14px; font-size: 13px; font-weight: 600;
+  color: #555; text-decoration: none;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+  border-radius: 6px 6px 0 0;
+  transition: color .15s, border-color .15s;
+}
+.bb-fa-tab:hover { color: var(--bb-verde); }
+.bb-fa-tab.active { color: var(--bb-verde); border-bottom-color: var(--bb-verde); background: #f8f9fa; }
+.bb-fa-tab-count {
+  background: var(--bb-border); color: #555; font-size: 11px;
+  padding: 1px 6px; border-radius: 10px; margin-left: 4px;
+}
+
+/* ── Ricerca ───────────────────────────────────────────────── */
+.bb-fa-search-form { margin-bottom: 14px; }
+.bb-fa-search-wrap { display: flex; gap: 6px; align-items: center; }
+.bb-fa-search-input {
+  flex: 1; max-width: 380px;
+  border: 1.5px solid var(--bb-border); border-radius: 6px;
+  padding: 8px 12px; font-size: 14px;
+  transition: border-color .15s;
+}
+.bb-fa-search-input:focus { border-color: var(--bb-verde); outline: none; }
+
+/* ── Tabella ───────────────────────────────────────────────── */
+.bb-fa-table-wrap { overflow-x: auto; }
+.bb-fa-table {
+  width: 100%; border-collapse: collapse;
+  background: #fff; border-radius: var(--bb-radius);
+  box-shadow: var(--bb-shadow); overflow: hidden;
+}
+.bb-fa-table thead tr { background: var(--bb-verde); }
+.bb-fa-table thead th {
+  padding: 10px 14px; text-align: left;
+  font-size: 12px; font-weight: 700;
+  color: var(--bb-giallo); letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.bb-fa-table tbody tr { border-bottom: 1px solid #f0f0f0; transition: background .1s; }
+.bb-fa-table tbody tr:hover { background: #f9f9f9; }
+.bb-fa-table tbody tr:last-child { border-bottom: none; }
+.bb-fa-table td { padding: 10px 14px; font-size: 13px; vertical-align: middle; }
+.bb-fa-table td small { color: #888; font-size: 11px; display: block; }
+.bb-fa-td-actions { white-space: nowrap; }
+
+/* ── Ref link ──────────────────────────────────────────────── */
+.bb-fa-ref-link {
+  font-weight: 700; color: var(--bb-verde);
+  text-decoration: none; font-family: monospace; font-size: 13px;
+}
+.bb-fa-ref-link:hover { text-decoration: underline; }
+
+/* ── Badge ─────────────────────────────────────────────────── */
+.bb-fa-badge {
+  display: inline-block; padding: 3px 10px;
+  border-radius: 12px; color: #fff;
+  font-size: 11px; font-weight: 700; white-space: nowrap;
+}
+.bb-fa-badge-sm { font-size: 10px; padding: 2px 7px; }
+
+/* ── Paginazione ───────────────────────────────────────────── */
+.bb-fa-pagination {
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 16px; flex-wrap: wrap;
+}
+.bb-fa-pg-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 6px;
+  border: 1.5px solid var(--bb-border);
+  font-size: 13px; font-weight: 600; color: #333;
+  text-decoration: none; transition: all .15s;
+}
+.bb-fa-pg-btn:hover { border-color: var(--bb-verde); color: var(--bb-verde); }
+.bb-fa-pg-btn.active { background: var(--bb-verde); color: var(--bb-giallo); border-color: var(--bb-verde); }
+.bb-fa-pg-info { font-size: 12px; color: #888; margin-left: 8px; }
+
+/* ── Empty ─────────────────────────────────────────────────── */
+.bb-fa-empty {
+  text-align: center; padding: 40px 20px;
+  color: #888; font-size: 15px;
+  background: #fff; border-radius: var(--bb-radius);
+  border: 1px solid var(--bb-border); box-shadow: var(--bb-shadow);
+}
+
+/* ── View: layout 2 colonne ─────────────────────────────────── */
+.bb-fa-view-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  align-items: start;
+  margin-top: 4px;
+}
+@media (max-width: 780px) {
+  .bb-fa-view-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Card ──────────────────────────────────────────────────── */
+.bb-fa-card {
+  background: #fff; border: 1px solid var(--bb-border);
+  border-radius: var(--bb-radius); padding: 18px 20px;
+  box-shadow: var(--bb-shadow); margin-bottom: 16px;
+}
+.bb-fa-card-title {
+  font-size: 15px; font-weight: 700; color: var(--bb-verde);
+  margin: 0 0 14px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--bb-giallo);
+}
+
+/* ── Info grid (label + valore) ─────────────────────────────── */
+.bb-fa-info-grid {
+  display: grid; grid-template-columns: 110px 1fr; gap: 8px 12px;
+  align-items: baseline;
+}
+.bb-fa-lbl { font-size: 12px; font-weight: 600; color: #888; white-space: nowrap; }
+
+/* ── Lista buoni ───────────────────────────────────────────── */
+.bb-fa-buoni-list { display: flex; flex-direction: column; gap: 10px; }
+.bb-fa-buono-row {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: #fafafa; border: 1px solid #f0f0f0;
+  border-radius: 6px; padding: 10px 12px;
+}
+.bb-fa-buono-num {
+  flex-shrink: 0; width: 28px; height: 28px;
+  background: var(--bb-verde); color: var(--bb-giallo);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+}
+.bb-fa-buono-info { flex: 1; min-width: 0; }
+.bb-fa-buono-dest { margin-bottom: 4px; }
+.bb-fa-buono-dest strong { font-size: 13px; color: #222; }
+.bb-fa-buono-email { font-size: 11px; color: #888; display: block; }
+.bb-fa-buono-meta { font-size: 12px; color: #555; margin-bottom: 4px; }
+.bb-fa-buono-msg { font-size: 12px; color: #777; font-style: italic; }
+.bb-fa-buono-stato { flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
+.bb-fa-codice {
+  font-family: monospace; font-size: 11px; background: #eee;
+  padding: 2px 6px; border-radius: 4px; color: #333;
+}
+
+/* ── PDF list ──────────────────────────────────────────────── */
+.bb-fa-pdf-list { list-style: none; margin: 0; padding: 0; }
+.bb-fa-pdf-list li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid #f0f0f0; flex-wrap: wrap;
+}
+.bb-fa-pdf-list li:last-child { border-bottom: none; }
+.bb-fa-pdf-tipo { font-size: 12px; color: #888; white-space: nowrap; }
+.bb-fa-pdf-link { font-size: 13px; color: var(--bb-info); text-decoration: none; flex: 1; }
+.bb-fa-pdf-link:hover { text-decoration: underline; }
+.bb-fa-pdf-data { font-size: 11px; color: #aaa; white-space: nowrap; }
+.bb-fa-empty-inline { color: #888; font-size: 13px; font-style: italic; }
+
+/* ── Azioni ────────────────────────────────────────────────── */
+.bb-fa-actions { display: flex; flex-direction: column; gap: 8px; }
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.bb-fa-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 14px; border-radius: 6px; border: 1.5px solid transparent;
+  font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none;
+  transition: all .15s; background: #f0f0f0; color: #333; border-color: var(--bb-border);
+  font-family: inherit;
+}
+.bb-fa-btn:hover { background: #e0e0e0; }
+.bb-fa-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.bb-fa-btn-sm  { padding: 5px 10px; font-size: 12px; }
+.bb-fa-btn-xs  { padding: 3px 7px;  font-size: 11px; }
+.bb-fa-btn-full { width: 100%; text-align: center; }
+
+.bb-fa-btn-success { background: var(--bb-ok);    color: #fff; border-color: var(--bb-ok); }
+.bb-fa-btn-success:hover { background: #218838; }
+.bb-fa-btn-danger  { background: var(--bb-errore); color: #fff; border-color: var(--bb-errore); }
+.bb-fa-btn-danger:hover  { background: #c82333; }
+.bb-fa-btn-outline { background: transparent; color: var(--bb-verde); border-color: var(--bb-verde); }
+.bb-fa-btn-outline:hover { background: var(--bb-avorio); }
+.bb-fa-btn-outline-danger { background: transparent; color: var(--bb-errore); border-color: var(--bb-errore); }
+.bb-fa-btn-outline-danger:hover { background: #fff5f5; }
+
+/* ── Spinner overlay su azioni ─────────────────────────────── */
+.bb-fa-btn.loading {
+  pointer-events: none; opacity: .75;
+}
+.bb-fa-btn.loading::after {
+  content: ' …';
+}
+
+@media (max-width: 600px) {
+  .bb-fa-table thead { display: none; }
+  .bb-fa-table tr { display: block; border: 1px solid #eee; border-radius: 6px; margin-bottom: 8px; }
+  .bb-fa-table td { display: flex; justify-content: space-between; padding: 6px 10px; font-size: 12px; }
+  .bb-fa-table td::before { content: attr(data-label); font-weight: 700; color: #888; }
+}
